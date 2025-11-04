@@ -8,6 +8,7 @@ import CookieConsent from "./components/CookieConsent";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 import ChristmasSnowfall from "./components/ChristmasSnowfall";
 import { Analytics } from "@vercel/analytics/next"
+import Maintenance from "./components/Maintenance";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -144,11 +145,16 @@ export const metadata: Metadata = {
   }
 };
 // yo yo, wassup, ma name is big A aka the big ANTHONYYYYYYYYYYYYYYYYYY. like my work so far? rate it a 5 star on BBB pweaseeeeeeeeee
+// Schalter für Wartungsmodus (manuell true/false setzen):
+const maintenanceMode = true;
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (maintenanceMode) {
+    return <Maintenance />;
+  }
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
