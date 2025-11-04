@@ -212,11 +212,30 @@ function ProConstructionSign({size=1.0}:{size?:number}) {
 
 function Snowfall({count=35}) {
   // Schneeflocken deutlich größer und mehr Variation
-  const [flakes, setFlakes] = React.useState(() => {
-    const arr=[]; for(let i=0;i<count;++i) arr.push({id:i,x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight*0.93,size:Math.random()*12+8,speed:Math.random()*0.8+0.5,opacity:Math.random()*0.28+0.43});
-    return arr;
-  });
+  const [flakes, setFlakes] = React.useState<Array<{id:number,x:number,y:number,size:number,speed:number,opacity:number}>>([]);
+  const [mounted, setMounted] = React.useState(false);
+  
   React.useEffect(()=>{
+    setMounted(true);
+    if (typeof window === 'undefined') return;
+    
+    // Initialisiere Flakes nur client-seitig
+    const initialFlakes = [];
+    for(let i=0;i<count;++i) {
+      initialFlakes.push({
+        id:i,
+        x:Math.random()*window.innerWidth,
+        y:Math.random()*window.innerHeight*0.93,
+        size:Math.random()*12+8,
+        speed:Math.random()*0.8+0.5,
+        opacity:Math.random()*0.28+0.43
+      });
+    }
+    setFlakes(initialFlakes);
+  }, [count]);
+  
+  React.useEffect(()=>{
+    if (!mounted || typeof window === 'undefined') return;
     let anim=true;
     function tick() {
       setFlakes(prev=>prev.map(f=>{
@@ -229,7 +248,10 @@ function Snowfall({count=35}) {
     }
     requestAnimationFrame(tick);
     return ()=>{ anim=false };
-  },[]);
+  },[mounted]);
+  
+  if (!mounted) return null;
+  
   return (
     <>
       {flakes.map(f=>(
