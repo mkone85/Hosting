@@ -11,8 +11,8 @@ export default function Footer() {
   const { t } = useLanguage()
 
   const quickLinks = [
-    { name: t('footer.clientArea'), href: "#" },
-    { name: t('footer.discord'), href: "#" },
+    { name: t('footer.clientArea'), href: "https://hosting.xmade-systems.com/" },
+    { name: t('footer.discord'), href: "https://discord.com/invite/4BptBGB9Kb" },
     { name: t('footer.vpsHosting'), href: "/vps" },
     { name: t('footer.dedicatedServerHosting'), href: "/dedicated" },
     { name: t('footer.gameServerHosting'), href: "/games" },
@@ -24,9 +24,9 @@ export default function Footer() {
   ]
 
   const contactInfo = [
-    { icon: Mail, label: t('footer.email'), value: "support@dezerx.com", href: "mailto:support@dezerx.com" },
-    { icon: Phone, label: t('footer.phone'), value: "N/A", href: "tel:+15551234567" },
-    { icon: Gamepad2, label: t('footer.gamePanel'), value: "panel.dezerx.com", href: "https://panel.dezerx.com" },
+    { icon: Mail, label: t('footer.email'), value: "support@xmade-systems.com", href: "mailto:support@xmade-systems.com" },
+    { icon: Phone, label: t('footer.phone'), value: "+49 711 25253200", href: "tel:+4971125253200" },
+    { icon: Gamepad2, label: t('footer.gamePanel'), value: "panel.xmade-systems.com", href: "https://panel.xmade-systems.com" },
   ]
 
   return (
@@ -47,8 +47,8 @@ export default function Footer() {
             >
               <div className="mb-6">
                 <Image
-                  src="/meta/Logo.png"
-                  alt="Dezer Logo"
+                  src="/meta/fav.png"
+                  alt="xmade-systems-logo"
                   width={200}
                   height={60}
                   className="h-12 w-auto"
@@ -59,7 +59,7 @@ export default function Footer() {
               </p>
               <div className="text-xs text-gray-500 dark:text-gray-500">
                 {/* HEY, HOLD UR HORSES, EITHER FULLY REMOVE IT OR KEEP IT. IT WOULD BE A SHAME IF I BUSTED YOU FOR CLAIMING YOU DID SOMETHING THAT U DIDN'T, RIGHT?  */}
-                Made by <span className="icon-text-primary font-medium">Anthony S</span>
+                Made by <span className="icon-text-primary font-medium">MK</span>
               </div>
             </motion.div>
             <motion.div
@@ -146,7 +146,7 @@ export default function Footer() {
             {/* Look, remove the DezerNova add ur own hosting, but go above and change ur name to MY NAME AGAIN. come onn man, it would look like i worked for you. come on buddy, i know u want to keep it.  */}
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="text-gray-500 dark:text-gray-500 text-sm mb-4 md:mb-0">
-                © {new Date().getFullYear()} DezerNova. All rights reserved.
+                © {new Date().getFullYear()} Xmade Systems. All rights reserved.
               </div>
               <div className="flex items-center space-x-6">
                 <div className="flex items-center space-x-2">

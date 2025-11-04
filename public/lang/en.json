@@ -70,7 +70,10 @@
   "locations": {
     "title": "Global Locations",
     "subtitle": "Strategically positioned servers worldwide for optimal performance and minimal latency",
-    "badge": "Global Infrastructure"
+    "badge": "Global Infrastructure",
+    "globalPresence": "Global Presence",
+    "localPerformance": "Local Performance",
+    "description": "Our rapidly expanding datacenter network spans across the Americas and Europe, delivering ultra-low latency from anywhere and lightning-fast connections wherever you play."
   },
   "faq": {
     "title": "Frequently Asked Questions",

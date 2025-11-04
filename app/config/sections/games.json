@@ -6,6 +6,7 @@
       "image": "/cpu/ryzen7.png"
     },
     {
+      "_disabled": false,
       "id": "premium",
       "name": "Premium Ryzen 9",
       "image": "/cpu/ryzen9.png"
@@ -19,6 +20,7 @@
       "availablePlanTypes": ["budget"]
     },
     {
+      "_disabled": false,
       "id": "singapore",
       "name": "Singapore",
       "flag": "/flags/singapore.png",
@@ -44,7 +46,7 @@
             "ram": "4 GB",
             "cpu": "Unmetered",
             "storage": "Unmetered SSD",
-            "price": 4.0,
+            "price": 3.0,
             "orderLink": "https://order.example.com/minecraft-4gb"
           },
           {
@@ -54,7 +56,7 @@
             "ram": "8 GB",
             "cpu": "Unmetered",
             "storage": "Unmetered SSD",
-            "price": 8.0,
+            "price": 4.0,
             "orderLink": "https://order.example.com/minecraft-8gb"
           },
           {
@@ -64,7 +66,7 @@
             "ram": "16 GB",
             "cpu": "Unmetered",
             "storage": "Unmetered SSD",
-            "price": 16.0,
+            "price": 8.0,
             "orderLink": "https://order.example.com/minecraft-16gb"
           },
           {
@@ -74,7 +76,7 @@
             "ram": "32 GB",
             "cpu": "Unmetered",
             "storage": "Unmetered SSD",
-            "price": 32.0,
+            "price": 24.0,
             "orderLink": "https://order.example.com/minecraft-32gb"
           }
         ],
@@ -96,7 +98,7 @@
             "ram": "8 GB",
             "cpu": "Unmetered",
             "storage": "Unmetered SSD",
-            "price": 10.0,
+            "price": 8.0,
             "orderLink": "https://order.example.com/minecraft-premium-8gb"
           },
           {
@@ -106,7 +108,7 @@
             "ram": "16 GB",
             "cpu": "Unmetered",
             "storage": "Unmetered SSD",
-            "price": 20.0,
+            "price": 15.0,
             "orderLink": "https://order.example.com/minecraft-premium-16gb"
           },
           {
@@ -116,13 +118,14 @@
             "ram": "32 GB",
             "cpu": "Unmetered",
             "storage": "Unmetered SSD",
-            "price": 40.0,
+            "price": 24.0,
             "orderLink": "https://order.example.com/minecraft-premium-32gb"
           }
         ]
       }
     },
     {
+      "_disabled": false,
       "id": "gmod",
       "name": "Garry's Mod",
       "description": "Create and play in endless user-generated content",
@@ -219,6 +222,7 @@
       }
     },
     {
+      "_disabled": false,
       "id": "csgo",
       "name": "CS:GO",
       "description": "Competitive tactical first-person shooter",
@@ -315,6 +319,7 @@
       }
     },
     {
+      "_disabled": false,
       "id": "rust",
       "name": "Rust",
       "description": "Survive, build, and dominate in this harsh multiplayer world",
@@ -411,6 +416,7 @@
       }
     },
     {
+      "_disabled": false,
       "id": "ark",
       "name": "ARK: Survival Evolved",
       "description": "Tame dinosaurs and survive in a prehistoric world",
@@ -507,6 +513,7 @@
       }
     },
     {
+      "_disabled": false,
       "id": "valheim",
       "name": "Valheim",
       "description": "Explore and survive in a Norse mythology-inspired world",
@@ -603,6 +610,7 @@
       }
     },
     {
+      "_disabled": false,
       "id": "discord-nodejs",
       "name": "Discord (NodeJS)",
       "description": "Host your Discord bot with reliable NodeJS hosting",

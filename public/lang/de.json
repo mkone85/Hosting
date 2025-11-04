@@ -70,7 +70,10 @@
   "locations": {
     "title": "Globale Standorte",
     "subtitle": "Strategisch positionierte Server weltweit für optimale Leistung und minimale Latenz",
-    "badge": "Globale Infrastruktur"
+    "badge": "Globale Infrastruktur",
+    "globalPresence": "Globale Präsenz",
+    "localPerformance": "Lokale Leistung",
+    "description": "Unser sich schnell ausdehnendes Rechenzentrums-Netzwerk erstreckt sich über Amerika und Europa und bietet ultra-niedrige Latenz von überall und blitzschnelle Verbindungen, wo immer Sie spielen."
   },
   "faq": {
     "title": "Häufig Gestellte Fragen",
@@ -127,7 +130,7 @@
     "titlePrefix": "Hosten Sie Ihre eigenen",
     "titleSuffix": "Server",
     "description": "Erleben Sie blitzschnelle Leistung, unschlagbare Zuverlässigkeit und 24/7-Support für alle Ihre Lieblingsspiele.",
-    "getStarted": "Loslegen",
+    "getStarted": "Jetzt Loslegen",
     "learnMore": "Mehr Erfahren",
     "getStartedFree": "Kostenlos loslegen!",
     "instantSetup": "Sofortige Einrichtung",

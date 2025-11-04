@@ -3,8 +3,18 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { memo, useMemo, useState, useEffect } from "react";
 import { Globe } from "@/components/ui/globe";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const locations = [
+    {
+        name: "Düsseldorf",
+        region: "EU West",
+        flag: "/flags/germany.png",
+        ping: "66ms",
+        status: "active",
+        lat: 52.3676,
+        lng: 4.9041,
+    },
     {
         name: "Amsterdam",
         region: "EU West",
@@ -85,6 +95,7 @@ LocationItem.displayName = 'LocationItem';
 
 
 export default function LocationsSection() {
+    const { t } = useLanguage();
     const [isDark, setIsDark] = useState(true);
 
     useEffect(() => {
@@ -185,8 +196,7 @@ export default function LocationsSection() {
                         </h2>
 
                         <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 lg:mb-8 leading-relaxed max-w-xl">
-                            Our rapidly expanding datacenter network spans across the Americas and Europe,
-                            delivering ultra-low latency from anywhere and lightning-fast connections wherever you play.
+                            {t('locations.description')}
                         </p>
 
                         {/* Locations Lists */}

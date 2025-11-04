@@ -146,7 +146,7 @@ export const metadata: Metadata = {
 };
 // yo yo, wassup, ma name is big A aka the big ANTHONYYYYYYYYYYYYYYYYYY. like my work so far? rate it a 5 star on BBB pweaseeeeeeeeee
 // Schalter für Wartungsmodus (manuell true/false setzen):
-const maintenanceMode = true;
+const maintenanceMode = false;
 export default function RootLayout({
   children,
 }: Readonly<{

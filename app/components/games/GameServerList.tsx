@@ -20,9 +20,9 @@ export default function GameServerList() {
   const searchParams = useSearchParams()
   const { selectedCurrency, setSelectedCurrency, convertPrice } = useCurrency()
   const { t } = useLanguage()
-  const [selectedGame, setSelectedGame] = useState<string>(config.games[0]?.id || "")
-  const [selectedLocation, setSelectedLocation] = useState<string>(config.locations[0]?.id || "")
-  const [selectedPlanType, setSelectedPlanType] = useState<"budget" | "premium">("budget")
+  const [selectedGame, setSelectedGame] = useState<string>(config.games.find((game: any) => !game._disabled)?.id || config.games[0]?.id || "")
+  const [selectedLocation, setSelectedLocation] = useState<string>(config.locations.find((loc: any) => !loc._disabled)?.id || config.locations[0]?.id || "")
+  const [selectedPlanType, setSelectedPlanType] = useState<"budget" | "premium">((config.planTypes.find((type: any) => !type._disabled)?.id || "budget") as "budget" | "premium")
 
   useEffect(() => {
     const game = searchParams.get("game")
@@ -147,7 +147,7 @@ export default function GameServerList() {
             <div className="flex flex-col items-left">
               <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">{t('gameServerList.step1')}</h3>
               <div className="flex flex-wrap gap-2">
-                {config.planTypes.map((type) => {
+                {config.planTypes.filter((type: any) => !type._disabled).map((type) => {
                   const isAvailable = availablePlanTypes.includes(type.id)
                   const isSelected = selectedPlanType === type.id
 
@@ -180,7 +180,7 @@ export default function GameServerList() {
             <div className="flex flex-col items-left">
               <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3.5">{t('gameServerList.step2')}</h3>
               <div className="flex flex-wrap gap-2">
-                {config.locations.map((location: GameLocation) => {
+                {config.locations.filter((location: any) => !location._disabled).map((location: GameLocation) => {
                   const hasAvailablePlanTypes = location.availablePlanTypes.length > 0
                   const isSelected = selectedLocation === location.id
 
@@ -220,8 +220,8 @@ export default function GameServerList() {
         >
           <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">{t('gameServerList.step3')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative">
-            {config.games.map((game: Game, index: number) => {
-              const firstFeaturedGame = config.games.find((g: Game) => g.featured)
+            {config.games.filter((game: any) => !game._disabled).map((game: Game, index: number) => {
+              const firstFeaturedGame = config.games.find((g: Game) => g.featured && !(g as any)._disabled)
               const showChristmas = uiConfig.christmasTheme.enabled && game.id === firstFeaturedGame?.id
 
               return (
@@ -295,7 +295,7 @@ export default function GameServerList() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="relative w-8 h-8 rounded-md">
                     <Image
-                      src={currentLocation?.flag || config.locations[0].flag}
+                      src={currentLocation?.flag || config.locations.find((loc: any) => !loc._disabled)?.flag || config.locations[0]?.flag}
                       alt={`${currentLocation?.name || "Location"}`}
                       fill
                       sizes="32px"
