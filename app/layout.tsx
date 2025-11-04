@@ -51,7 +51,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "DezerNova - Game Hosting, VPS & Dedicated Servers",
+    default: "Xmade Systems - Game Hosting, VPS & Dedicated Servers",
     template: "%s | DezerNova"
   },
   description: "Premium game hosting, VPS & dedicated servers by DezerNova. High-performance infrastructure with 99.9% uptime, DDoS protection & 24/7 support.",
