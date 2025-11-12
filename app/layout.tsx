@@ -152,9 +152,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (maintenanceMode) {
-    return <Maintenance />;
-  }
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -231,17 +228,21 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${quicksand.variable} antialiased min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300`}
         suppressHydrationWarning
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <LanguageProvider>
-            <ChristmasSnowfall />
-            <LayoutWrapper>
-              {children}
-              <Analytics />
-            </LayoutWrapper>
-            <CookieConsent />
-            <ThemeSwitcher />
-          </LanguageProvider>
-        </ThemeProvider>
+        {maintenanceMode ? (
+          <Maintenance />
+        ) : (
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+            <LanguageProvider>
+              <ChristmasSnowfall />
+              <LayoutWrapper>
+                {children}
+                <Analytics />
+              </LayoutWrapper>
+              <CookieConsent />
+              <ThemeSwitcher />
+            </LanguageProvider>
+          </ThemeProvider>
+        )}
       </body>
     </html>
   );
